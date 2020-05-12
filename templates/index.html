@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Оптический калькулятор</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+<body>
+<main style="height: calc(100vh - 100px)">
+    <div class="mt-5 d-flex justify-content-center">
+        <img alt="Banner of Physics" src="../static/refraction.svg" style="width: 200px">
+    </div>
+
+    <form class="mt-2 container d-flex justify-content-center flex-column w-50"
+          name="monograph-text" action="." method="post">
+        <h1 class="mb-4 text-center">Калькулятор оптического преломления</h1>
+
+        <label>Введите размер дистанции от объекта</label>
+        <input
+            type="number"
+            class="dist-subject"
+            name="dist-subject"
+        >
+
+        <label>Введите фокусное расстояние</label>
+        <input
+            type="number"
+            class="focal-length"
+            name="focal-length"
+        >
+
+        <label>Введите высоту объекта</label>
+        <input
+            type="number"
+            class="height-subject"
+            name="height-subject"
+        >
+        <input class="btn btn-success mt-3" type="submit" value="Рассчитать">
+
+        <p>{{dist_subject_result}}</p>
+        <p>{{focal_length_result}}</p>
+        <p>{{height_subject_result}}</p>
+    </form>
+</main>
+</body>
+</html>
