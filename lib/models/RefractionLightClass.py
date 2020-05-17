@@ -11,7 +11,7 @@ from lib.util import errors
 class RefractionLightClass:
     """Класс для вычисления угла падения/отражения на границу раздела двух сред"""
 
-    file_to_csv = "../files/list_of_refractive_indices.csv"
+    file_to_csv = "/Users/r.v.mosolov/Desktop/webstorm-projects/projects/small-projects/optical-calculator/lib/files/list_of_refractive_indices.csv"
     graph = RefractionGraph()
 
     def __init__(self):
