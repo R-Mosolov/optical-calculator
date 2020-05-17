@@ -1,6 +1,4 @@
 from flask import Flask, render_template, request
-import pandas as pd
-import matplotlib.pyplot as plt
 
 from lib.models.RefractionLightClass import RefractionLightClass
 
@@ -22,18 +20,10 @@ def getvalue():
     media = request.form['media']
     refraction = RefractionLightClass()
 
-    # MAIN CALCULATOR
+    # Calculating refraction angle
+    refraction_angle = round(refraction.get_angle_refraction(angle, medium_one, medium_two), 2)
 
-    # 1. Building refraction schema
-    s = pd.Series([1, 2, 3])
-    figure, ax = plt.subplots()
-    s.plot.bar()
-    figure.savefig('./static/refraction_plot.png')
-
-    # 2. Calculating refraction angle
-    refraction_angle = refraction.get_angle_refraction(angle, medium_one, medium_two)
-
-    # 3. Getting refractive index
+    # Getting refractive index
     refractive_index = refraction.get_refractive_index(media)
 
     # Rendering result that a user inserted
